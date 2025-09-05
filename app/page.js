@@ -337,7 +337,7 @@ export default function Home() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          Hear it from those who `&apos;`ve experienced it. 🧑‍🎓
+          Hear it from those who&apos;ve experienced it. 🧑‍🎓
         </motion.h2>
         <motion.p
           className="text-lg text-gray-700 mb-12"
