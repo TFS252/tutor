@@ -367,8 +367,8 @@ export default function FindTutor() {
               Looking for something specific?
             </h3>
             <p className="text-gray-700 text-sm mb-4">
-              Tell us what you`&apos;`re looking for, and we`&apos;`ll help you
-              find the perfect tutor.
+              Tell us what you&apos;re looking for, and we&apos;ll help you find
+              the perfect tutor.
             </p>
             <button className="bg-gray-800 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-900 transition-colors">
               Tell us more
@@ -399,13 +399,13 @@ export default function FindTutor() {
               <p className="text-gray-700 text-lg mb-4">
                 When you find a tutor you like, book a 15-minute meeting to ask
                 questions, find out about their teaching style - and make sure
-                they`&apos;`re someone your child will get on with.
+                they&apos;re someone your child will get on with.
               </p>
               <h3 className="text-3xl font-bold text-gray-900 mt-12 mb-4">
-                You`&apos;`ll only pay for what you use
+                You&apos;ll only pay for what you use
               </h3>
               <p className="text-gray-700 text-lg">
-                With MyTutor, you won`&apos;`t pay anything until you`&apos;`ve
+                With MyTutor, you won&apos;t pay anything until you&apos;ve
                 found a great tutor, had a chat with them and booked your first
                 lesson. No sign up fees. No subscriptions. Just plain
                 pay-as-you-go.
@@ -523,7 +523,7 @@ export default function FindTutor() {
                   ago
                 </h4>
                 <p className="text-gray-900 text-sm italic">
-                  `&apos;`{testimonial.text}`&apos;`
+                  &apos;{testimonial.text}&apos;
                 </p>
                 {/* kya hua? */}
               </motion.div>

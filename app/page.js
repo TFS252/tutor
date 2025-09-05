@@ -90,7 +90,7 @@ export default function Home() {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               Go beyond grades with personalized, one-on-one tutoring. Our
-              expert educators don`&apos;`t just teach subjects; they build
+              expert educators don&apos;t just teach subjects; they build
               lasting confidence and help students discover their full
               potential.
             </motion.p>
@@ -337,7 +337,7 @@ export default function Home() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          Hear it from those who&apos;ve experienced it. 🧑‍🎓
+          Hear it from those who&apos;ve experienced it.
         </motion.h2>
         <motion.p
           className="text-lg text-gray-700 mb-12"
