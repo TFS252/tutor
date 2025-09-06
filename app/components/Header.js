@@ -1,17 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-gray-800 text-white border-b border-gray-700">
+    <header className="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold">
+        <div className="text-2xl font-extrabold tracking-wide text-amber-500 hover:text-amber-400 transition-colors">
           <Link href="/">GetTutor</Link>
         </div>
 
@@ -23,25 +23,42 @@ export default function Header() {
           >
             Find a tutor
           </Link>
-          <Link href="#" className="hover:text-amber-500 transition-colors">
+          <Link
+            href="/howWork"
+            className="hover:text-amber-500 transition-colors"
+          >
             How it works
           </Link>
-          <Link href="#" className="hover:text-amber-500 transition-colors">
-            For Study
+          <Link
+            href="/forStudent"
+            className="hover:text-amber-500 transition-colors"
+          >
+            For Students
           </Link>
-          <Link href="#" className="hover:text-amber-500 transition-colors">
+          <Link
+            href="/forMusic"
+            className="hover:text-amber-500 transition-colors"
+          >
             For Music
           </Link>
-          <Link href="#" className="hover:text-amber-500 transition-colors">
+          <Link
+            href="/forDance"
+            className="hover:text-amber-500 transition-colors"
+          >
             For Dance
           </Link>
-          <Link href="#" className="hover:text-amber-500 transition-colors">
-            Price
+          <Link
+            href="/pricing"
+            className="hover:text-amber-500 transition-colors"
+          >
+            Pricing
           </Link>
-          <Link href="#" className="hover:text-amber-500 transition-colors">
+          <Link
+            href="/becomeTutor"
+            className="hover:text-amber-500 transition-colors"
+          >
             Become a tutor
           </Link>
-          {/* jab project build krte ho tb konsi command chalate ho aur jab build ho jata hai tb konsa folder banta hai aur bss npm run build or folder?  code build kiya nhi */}
         </nav>
 
         {/* Right Section & Mobile Menu Button */}
@@ -49,24 +66,28 @@ export default function Header() {
           <span className="hidden md:block font-medium text-gray-400">
             +91 203 773 6024
           </span>
-          <button className="hidden md:block border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition-colors text-gray-300">
+          <button className="hidden md:block border border-gray-600 px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-gray-300">
             Log in
           </button>
-          <button className="bg-amber-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 transition-colors font-bold shadow-lg">
+          <button className="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold shadow-lg">
             Sign up
           </button>
           <button
             className="md:hidden text-2xl text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <FaBars />
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <nav className="md:hidden bg-gray-700 w-full flex flex-col items-center py-4 space-y-4 text-white">
+      <div
+        className={`fixed top-0 right-0 h-full w-2/3 bg-gray-800 shadow-lg transform transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col items-center py-8 space-y-6 text-lg">
           <Link
             href="/findTutor"
             className="hover:text-amber-500 transition-colors"
@@ -74,43 +95,52 @@ export default function Header() {
             Find a tutor
           </Link>
           <Link
-            href="howWork"
+            href="/howWork"
             className="hover:text-amber-500 transition-colors"
           >
             How it works
           </Link>
           <Link
-            href="forStudent"
+            href="/forStudent"
             className="hover:text-amber-500 transition-colors"
           >
             For Students
           </Link>
           <Link
-            href="forMusic"
+            href="/forMusic"
             className="hover:text-amber-500 transition-colors"
           >
             For Music
           </Link>
           <Link
-            href="forDance"
+            href="/forDance"
             className="hover:text-amber-500 transition-colors"
           >
             For Dance
           </Link>
           <Link
-            href="becomeTutor"
+            href="/pricing"
+            className="hover:text-amber-500 transition-colors"
+          >
+            Pricing
+          </Link>
+          <Link
+            href="/becomeTutor"
             className="hover:text-amber-500 transition-colors"
           >
             Become a tutor
           </Link>
-          <span className="font-medium text-gray-400 pt-2">
+          <span className="font-medium text-gray-400 pt-4">
             +91 203 773 6024
           </span>
-          <button className="border border-gray-500 px-4 py-2 rounded-md hover:bg-gray-600 transition-colors text-gray-300 w-4/5 text-center">
+          <button className="border border-gray-500 px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-300 w-4/5">
             Log in
           </button>
-        </nav>
-      )}
+          <button className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold w-4/5">
+            Sign up
+          </button>
+        </div>
+      </div>
     </header>
   );
 }
