@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Animation variants
+  // Animation for mobile menu
   const menuVariants = {
     hidden: { y: -30, opacity: 0, transition: { duration: 0.25 } },
     visible: { y: 0, opacity: 1, transition: { duration: 0.25 } },
@@ -16,6 +16,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md z-50">
+      {/* full background, content aligned inside */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-extrabold tracking-wide text-amber-500 hover:text-amber-400 transition-colors">
@@ -101,6 +102,15 @@ export default function Header() {
             variants={menuVariants}
             className="absolute top-full left-0 w-full bg-gray-800 flex flex-col items-center py-6 space-y-6 text-lg font-medium md:hidden"
           >
+            {/* Close button inside menu */}
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="absolute top-4 right-6 text-2xl text-amber-500"
+              aria-label="Close menu"
+            >
+              <FaTimes />
+            </button>
+
             <Link
               href="/find-tutor"
               className="hover:text-amber-500 transition-colors"
