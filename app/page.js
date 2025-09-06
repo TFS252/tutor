@@ -462,7 +462,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 6: Stats */}
-      <section className="bg-[#1b2c4c] py-12 text-white">
+      <section className="bg-[#1b2c4c] py-12 text-white pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
           <div className="flex flex-col items-center">
             <span className="text-3xl sm:text-4xl font-bold">8200+</span>
