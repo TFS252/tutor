@@ -78,7 +78,7 @@ export default function Header() {
             Log in
           </button>
           <button className="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold shadow-lg">
-            Sign now now now
+            Sign
           </button>
 
           {/* Mobile Menu Toggle */}
@@ -153,7 +153,7 @@ export default function Header() {
               Log in
             </button>
             <button className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold w-4/5">
-              Sign nowwwwwwwwwwwwwwwwwwwwwwwwww
+              Sign up
             </button>
           </motion.nav>
         )}
