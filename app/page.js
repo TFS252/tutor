@@ -68,7 +68,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#fdf8f5] min-h-screen font-sans">
+    <div className=" min-h-screen font-sans">
       {/* HERO SECTION - Modern & Dynamic */}
       <section className="py-20">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
