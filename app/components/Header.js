@@ -1,24 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Animation variants for the mobile menu
+  // Animation variants
   const menuVariants = {
-    hidden: { y: -20, opacity: 0, transition: { duration: 0.3 } },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
+    hidden: { y: -30, opacity: 0, transition: { duration: 0.25 } },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.25 } },
   };
 
   return (
-    <header className="w-full bg-gray-800 text-white border-b border-gray-700">
+    <header className="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold">
+        <div className="text-2xl font-extrabold tracking-wide text-amber-500 hover:text-amber-400 transition-colors">
           <Link href="/">GetTutor</Link>
         </div>
 
@@ -68,28 +68,30 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Right Section & Mobile Menu Button */}
+        {/* Right Section */}
         <div className="flex items-center gap-4">
           <span className="hidden md:block font-medium text-gray-400">
             +91 203 773 6024
           </span>
-          <button className="hidden md:block border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition-colors text-gray-300">
+          <button className="hidden md:block border border-gray-600 px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-gray-300">
             Log in
           </button>
-          <button className="bg-amber-500 text-white px-4 py-2 rounded-md hover:bg-amber-600 transition-colors font-bold shadow-lg">
+          <button className="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold shadow-lg">
             Sign up
           </button>
+
+          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden text-2xl text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            <FaBars />
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu with AnimatePresence for smooth entry/exit */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.nav
@@ -97,55 +99,60 @@ export default function Header() {
             animate="visible"
             exit="hidden"
             variants={menuVariants}
-            className="md:hidden bg-gray-700 w-full flex flex-col items-center py-4 space-y-4 text-white"
+            className="absolute top-full left-0 w-full bg-gray-800 flex flex-col items-center py-6 space-y-6 text-lg font-medium md:hidden"
           >
             <Link
               href="/find-tutor"
-              className="hover:text-amber-500 transition-colors py-2"
+              className="hover:text-amber-500 transition-colors"
             >
               Find a tutor
             </Link>
             <Link
               href="/how-it-works"
-              className="hover:text-amber-500 transition-colors py-2"
+              className="hover:text-amber-500 transition-colors"
             >
               How it works
             </Link>
             <Link
               href="/for-students"
-              className="hover:text-amber-500 transition-colors py-2"
+              className="hover:text-amber-500 transition-colors"
             >
               For Students
             </Link>
             <Link
               href="/for-music"
-              className="hover:text-amber-500 transition-colors py-2"
+              className="hover:text-amber-500 transition-colors"
             >
               For Music
             </Link>
             <Link
               href="/for-dance"
-              className="hover:text-amber-500 transition-colors py-2"
+              className="hover:text-amber-500 transition-colors"
             >
               For Dance
             </Link>
             <Link
               href="/pricing"
-              className="hover:text-amber-500 transition-colors py-2"
+              className="hover:text-amber-500 transition-colors"
             >
               Pricing
             </Link>
             <Link
               href="/become-a-tutor"
-              className="hover:text-amber-500 transition-colors py-2"
+              className="hover:text-amber-500 transition-colors"
             >
               Become a tutor
             </Link>
-            <span className="font-medium text-gray-400 pt-4">
+
+            {/* Contact + Buttons */}
+            <span className="font-medium text-gray-400 pt-2">
               +91 203 773 6024
             </span>
-            <button className="border border-gray-500 px-4 py-2 rounded-md hover:bg-gray-600 transition-colors text-gray-300 w-4/5 text-center">
+            <button className="border border-gray-500 px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-300 w-4/5">
               Log in
+            </button>
+            <button className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold w-4/5">
+              Sign up
             </button>
           </motion.nav>
         )}
