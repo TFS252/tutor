@@ -78,7 +78,7 @@ export default function Header() {
             Log in
           </button>
           <button className="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold shadow-lg">
-            Sign up
+            Sign now now now
           </button>
 
           {/* Mobile Menu Toggle */}
