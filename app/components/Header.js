@@ -8,82 +8,61 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Animation for mobile menu
   const menuVariants = {
     hidden: { y: -30, opacity: 0, transition: { duration: 0.25 } },
     visible: { y: 0, opacity: 1, transition: { duration: 0.25 } },
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md z-50">
-      {/* full background, content aligned inside */}
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full bg-[#1b2c4c] text-white shadow-md z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-extrabold tracking-wide text-amber-500 hover:text-amber-400 transition-colors">
-          <Link href="/">GetTutor</Link>
+        <div className="text-2xl sm:text-3xl font-extrabold tracking-wide text-white">
+          <Link href="/">LEARNLY</Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 font-medium">
+        <nav className="hidden md:flex items-center space-x-12 font-medium">
           <Link
-            href="/find-tutor"
-            className="hover:text-amber-500 transition-colors"
+            href="/find-a-tutor"
+            className="hover:text-gray-300 transition-colors"
           >
             Find a tutor
           </Link>
           <Link
             href="/how-it-works"
-            className="hover:text-amber-500 transition-colors"
+            className="hover:text-gray-300 transition-colors"
           >
-            How it works
+            How it works?
           </Link>
           <Link
-            href="/for-students"
-            className="hover:text-amber-500 transition-colors"
+            href="/activity"
+            className="hover:text-gray-300 transition-colors"
           >
-            For Students
-          </Link>
-          <Link
-            href="/for-music"
-            className="hover:text-amber-500 transition-colors"
-          >
-            For Music
-          </Link>
-          <Link
-            href="/for-dance"
-            className="hover:text-amber-500 transition-colors"
-          >
-            For Dance
-          </Link>
-          <Link
-            href="/pricing"
-            className="hover:text-amber-500 transition-colors"
-          >
-            Pricing
+            Activity
           </Link>
           <Link
             href="/become-a-tutor"
-            className="hover:text-amber-500 transition-colors"
+            className="hover:text-gray-300 transition-colors"
           >
             Become a tutor
           </Link>
         </nav>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-4">
-          <span className="hidden md:block font-medium text-gray-400">
-            +91 203 773 6024
-          </span>
-          <button className="hidden md:block border border-gray-600 px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-gray-300">
-            Log in
+        {/* Desktop Action Buttons */}
+        <div className="hidden md:flex items-center space-x-4">
+          <button className="bg-[#ff7b47] text-white font-semibold py-2 px-6 rounded-md hover:bg-[#e66c3c] transition-colors">
+            Log In
           </button>
-          <button className="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold shadow-lg">
-            Sign
+          <button className="bg-white text-gray-800 font-semibold py-2 px-6 rounded-md hover:bg-gray-200 transition-colors">
+            Sign In
           </button>
+        </div>
 
-          {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle */}
+        <div className="flex items-center md:hidden">
           <button
-            className="md:hidden text-2xl text-white"
+            className="text-2xl text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -100,61 +79,45 @@ export default function Header() {
             animate="visible"
             exit="hidden"
             variants={menuVariants}
-            className="absolute top-full left-0 w-full bg-gray-800 flex flex-col items-center py-6 space-y-6 text-lg font-medium md:hidden"
+            className="md:hidden absolute top-full left-0 w-full bg-[#1b2c4c] flex flex-col items-center py-6 space-y-6 text-lg font-medium"
           >
             <Link
-              href="/find-tutor"
-              className="hover:text-amber-500 transition-colors"
+              href="/find-a-tutor"
+              className="hover:text-gray-300 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Find a tutor
             </Link>
             <Link
               href="/how-it-works"
-              className="hover:text-amber-500 transition-colors"
+              className="hover:text-gray-300 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              How it works
+              How it works?
             </Link>
             <Link
-              href="/for-students"
-              className="hover:text-amber-500 transition-colors"
+              href="/activity"
+              className="hover:text-gray-300 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              For Students
-            </Link>
-            <Link
-              href="/for-music"
-              className="hover:text-amber-500 transition-colors"
-            >
-              For Music
-            </Link>
-            <Link
-              href="/for-dance"
-              className="hover:text-amber-500 transition-colors"
-            >
-              For Dance
-            </Link>
-            <Link
-              href="/pricing"
-              className="hover:text-amber-500 transition-colors"
-            >
-              Pricing
+              Activity
             </Link>
             <Link
               href="/become-a-tutor"
-              className="hover:text-amber-500 transition-colors"
+              className="hover:text-gray-300 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Become a tutor
             </Link>
 
-            {/* Contact + Buttons */}
-            <span className="font-medium text-gray-400 pt-2">
-              +91 203 773 6024
-            </span>
-            <button className="border border-gray-500 px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-300 w-4/5">
-              Log in
-            </button>
-            <button className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold w-4/5">
-              Sign up
-            </button>
+            <div className="flex flex-col items-center space-y-4 pt-6">
+              <button className="bg-[#ff7b47] text-white font-semibold py-2 px-6 rounded-md hover:bg-[#e66c3c] transition-colors w-full">
+                Log In
+              </button>
+              <button className="bg-white text-gray-800 font-semibold py-2 px-6 rounded-md hover:bg-gray-200 transition-colors w-full">
+                Sign In
+              </button>
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>
