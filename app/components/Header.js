@@ -102,15 +102,6 @@ export default function Header() {
             variants={menuVariants}
             className="absolute top-full left-0 w-full bg-gray-800 flex flex-col items-center py-6 space-y-6 text-lg font-medium md:hidden"
           >
-            {/* Close button inside menu */}
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute top-4 right-6 text-2xl text-amber-500"
-              aria-label="Close menu"
-            >
-              <FaTimes />
-            </button>
-
             <Link
               href="/find-tutor"
               className="hover:text-amber-500 transition-colors"
