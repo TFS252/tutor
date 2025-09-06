@@ -153,7 +153,7 @@ export default function Header() {
               Log in
             </button>
             <button className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors font-bold w-4/5">
-              Sign up
+              Sign nowwwwwwwwwwwwwwwwwwwwwwwwww
             </button>
           </motion.nav>
         )}
