@@ -110,7 +110,7 @@ export default function Home() {
           >
             <div className="inline-block animate-bounce">
               <p className="text-[#ff7b47] font-semibold text-sm sm:text-base md:text-lg bg-orange-100 px-4 py-2 rounded-full">
-                🎓 100% Satisfaction
+                🎓 100% Satisfactionv
               </p>
             </div>
             <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">

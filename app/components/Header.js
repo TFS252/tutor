@@ -24,7 +24,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 lg:space-x-12 font-medium">
           <Link
-            href="/find-a-tutor"
+            href="/find-tutor"
             className="hover:text-gray-300 transition-colors"
           >
             Find a tutor
