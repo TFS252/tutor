@@ -213,7 +213,7 @@ export default function Home() {
                 } hover:scale-110 transition-transform duration-300`}
               >
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ff7b47] animate-pulse">
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f6672e] animate-pulse">
                     {stat.number}
                   </span>
                   <p className="text-xs sm:text-sm mt-2 text-gray-300">
