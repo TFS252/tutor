@@ -96,9 +96,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen font-sans overflow-x-hidden">
+    <div className="min-h-screen font-sans overflow-x-hidden p-15">
       {/* Hero Section - Empower Your Mind */}
-      <section className="bg-gradient-to-br from-gray-50 pt-11 via-white to-blue-50 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Text Content */}
           <div
@@ -108,6 +108,11 @@ export default function Home() {
                 : "-translate-x-full opacity-0"
             }`}
           >
+            <div className="inline-block animate-bounce">
+              <p className="text-[#ff7b47] font-semibold text-sm sm:text-base md:text-lg bg-orange-100 px-4 py-2 rounded-full">
+                🎓 100% Satisfaction
+              </p>
+            </div>
             <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
               <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent">
                 Empower Your Mind,
@@ -213,7 +218,7 @@ export default function Home() {
                 } hover:scale-110 transition-transform duration-300`}
               >
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f6672e] animate-pulse">
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#ff7b47] animate-pulse">
                     {stat.number}
                   </span>
                   <p className="text-xs sm:text-sm mt-2 text-gray-300">
