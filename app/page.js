@@ -454,7 +454,7 @@ export default function Home() {
                   <div className="text-2xl sm:text-3xl font-bold">
                     Contact US
                   </div>
-                </div>
+                </div>{" "}
               </div>
 
               {/* Floating Elements */}
