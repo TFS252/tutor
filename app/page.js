@@ -378,10 +378,10 @@ export default function Home() {
               style={{ animationDelay: "600ms" }}
             >
               <p className="text-center text-gray-700 text-base sm:text-lg leading-relaxed">
-                "The personalized tutoring approach transformed my learning
+                &quot;The personalized tutoring approach transformed my learning
                 experience completely. The interactive sessions and 24/7 support
                 helped me improve my grades significantly. I highly recommend
-                this platform to anyone looking for quality education!"
+                this platform to anyone looking for quality education!&quot;
               </p>
             </div>
 
