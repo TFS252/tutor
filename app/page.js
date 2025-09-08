@@ -98,7 +98,7 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans overflow-x-hidden p-15">
       {/* Hero Section - Empower Your Mind */}
-      <section className=" py-12 sm:py-16 md:py-20  px-4 sm:px-6 ">
+      <section className=" py-12 md:py-20  px-4  ">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Text Content */}
           <div
