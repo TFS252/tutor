@@ -22,7 +22,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-12 font-medium">
+        <nav className="hidden md:flex items-center space-x-8 lg:space-x-12 font-medium">
           <Link
             href="/find-a-tutor"
             className="hover:text-gray-300 transition-colors"
@@ -50,17 +50,17 @@ export default function Header() {
         </nav>
 
         {/* Desktop Action Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
-          <button className="bg-[#ff7b47] text-white font-semibold py-2 px-6 rounded-md hover:bg-[#e66c3c] transition-colors">
+        <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+          <button className="bg-[#ff7b47] text-white font-semibold py-2 px-5 lg:px-6 rounded-md hover:bg-[#e66c3c] transition-colors">
             Log In
           </button>
-          <button className="bg-white text-gray-800 font-semibold py-2 px-6 rounded-md hover:bg-gray-200 transition-colors">
+          <button className="bg-white text-gray-800 font-semibold py-2 px-5 lg:px-6 rounded-md hover:bg-gray-200 transition-colors">
             Sign In
           </button>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex items-center md:hidden">
+        <div className="md:hidden">
           <button
             className="text-2xl text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -81,36 +81,24 @@ export default function Header() {
             variants={menuVariants}
             className="md:hidden absolute top-full left-0 w-full bg-[#1b2c4c] flex flex-col items-center py-6 space-y-6 text-lg font-medium"
           >
-            <Link
-              href="/find-a-tutor"
-              className="hover:text-gray-300 transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Find a tutor
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="hover:text-gray-300 transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              How it works?
-            </Link>
-            <Link
-              href="/activity"
-              className="hover:text-gray-300 transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Activity
-            </Link>
-            <Link
-              href="/become-a-tutor"
-              className="hover:text-gray-300 transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Become a tutor
-            </Link>
+            {[
+              { href: "/find-a-tutor", label: "Find a tutor" },
+              { href: "/how-it-works", label: "How it works?" },
+              { href: "/activity", label: "Activity" },
+              { href: "/become-a-tutor", label: "Become a tutor" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="hover:text-gray-300 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
 
-            <div className="flex flex-col items-center space-y-4 pt-6">
+            {/* Buttons on mobile */}
+            <div className="flex flex-col items-center space-y-4 pt-6 w-full px-6">
               <button className="bg-[#ff7b47] text-white font-semibold py-2 px-6 rounded-md hover:bg-[#e66c3c] transition-colors w-full">
                 Log In
               </button>
