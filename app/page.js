@@ -428,7 +428,7 @@ export default function Home() {
               Experience the future of learning with our AI-powered matching
               system that connects you with the perfect tutor based on your
               learning style, schedule, and academic goals. Start your
-              personalized learning journey today!
+              personalized learning journey today! now
             </p>
             <button className="mt-8 group bg-gradient-to-r from-[#ff7b47] to-[#e66c3c] text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
               <span className="group-hover:translate-x-2 transition-transform duration-300">
