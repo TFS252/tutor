@@ -98,7 +98,7 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans overflow-x-hidden">
       {/* Hero Section - Empower Your Mind */}
-      <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-gray-50 pt-11 via-white to-blue-50 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Text Content */}
           <div
