@@ -65,6 +65,115 @@ export default function Home() {
 
   return (
     <div className="min-h-screen font-sans">
+      <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          {/* Text Content */}
+          <motion.div
+            className="md:w-1/2 text-center md:text-left"
+            variants={fadeIn}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <p className="text-[#ff7b47] font-semibold text-lg">
+              100% Satisfaction Guarantee
+            </p>
+            <h2 className="mt-2 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
+              Empower Your Mind, Achieve Your Goals
+            </h2>
+            <p className="mt-4 text-gray-700 text-lg">
+              Join thousands of learners and expert tutors from around the world
+              to unlock your full potential. Whether you want to master a new
+              subject, improve your skills, or prepare for exams, our
+              interactive courses, personalized guidance, and flexible learning
+              options make it easy to learn anytime, anywhere. Start your
+              journey today and take control of your future
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <button className="bg-[#ff7b47] text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-[#e66c3c] transition-colors">
+                Enrol Now
+              </button>
+              <button className="bg-transparent border border-gray-400 text-gray-800 font-semibold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors">
+                Explore Our Courses
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Image Grid with Shapes */}
+          <motion.div
+            className="relative md:w-1/2 flex justify-center mt-12 md:mt-0"
+            variants={fadeIn}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <div className="grid grid-cols-2 gap-4 relative z-10 p-4">
+              <div className="rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/empower1.png"
+                  alt="Happy student"
+                  width={300}
+                  height={200}
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/empower2.png"
+                  alt="Tutoring session"
+                  width={300}
+                  height={200}
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/empower3.png"
+                  alt="Tutor and student"
+                  width={300}
+                  height={200}
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/empower4.png"
+                  alt="Happy student"
+                  width={300}
+                  height={200}
+                />
+              </div>
+            </div>
+            {/* Decorative shapes */}
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[#ff7b47] rounded-full translate-x-1/2 -translate-y-1/2 z-0"></div>
+            <div className="absolute bottom-0 left-0 w-16 h-16 bg-blue-200 rounded-full -translate-x-1/2 translate-y-1/2 z-0"></div>
+            <div className="absolute top-1/4 left-1/4 w-12 h-12 bg-gray-400 rounded-full -translate-x-1/2 -translate-y-1/2 z-0"></div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 6: Stats */}
+      <section className="bg-[#1b2c4c] py-12 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+          <div className="flex flex-col items-center">
+            <span className="text-3xl sm:text-4xl font-bold">8200+</span>
+            <p className="text-sm mt-1 text-gray-300">Success Stories</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="text-3xl sm:text-4xl font-bold">500+</span>
+            <p className="text-sm mt-1 text-gray-300">Experts Tutor</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="text-3xl sm:text-4xl font-bold">20+</span>
+            <p className="text-sm mt-1 text-gray-300">Year Experience</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="text-3xl sm:text-4xl font-bold">8200+</span>
+            <p className="text-sm mt-1 text-gray-300">Active Student</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="text-3xl sm:text-4xl font-bold">8200+</span>
+            <p className="text-sm mt-1 text-gray-300">Active Student</p>
+          </div>
+        </div>
+      </section>
       {/* SECTION 1: Personalised Tutor */}
       <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -377,115 +486,6 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: Empower Your Mind */}
-      <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          {/* Text Content */}
-          <motion.div
-            className="md:w-1/2 text-center md:text-left"
-            variants={fadeIn}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <p className="text-[#ff7b47] font-semibold text-lg">
-              100% Satisfaction Guarantee
-            </p>
-            <h2 className="mt-2 text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-              Empower Your Mind, Achieve Your Goals
-            </h2>
-            <p className="mt-4 text-gray-700 text-lg">
-              Join thousands of learners and expert tutors from around the world
-              to unlock your full potential. Whether you want to master a new
-              subject, improve your skills, or prepare for exams, our
-              interactive courses, personalized guidance, and flexible learning
-              options make it easy to learn anytime, anywhere. Start your
-              journey today and take control of your future
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button className="bg-[#ff7b47] text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-[#e66c3c] transition-colors">
-                Enrol Now
-              </button>
-              <button className="bg-transparent border border-gray-400 text-gray-800 font-semibold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors">
-                Explore Our Courses
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Image Grid with Shapes */}
-          <motion.div
-            className="relative md:w-1/2 flex justify-center mt-12 md:mt-0"
-            variants={fadeIn}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <div className="grid grid-cols-2 gap-4 relative z-10 p-4">
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/empower1.png"
-                  alt="Happy student"
-                  width={300}
-                  height={200}
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/empower2.png"
-                  alt="Tutoring session"
-                  width={300}
-                  height={200}
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/empower3.png"
-                  alt="Tutor and student"
-                  width={300}
-                  height={200}
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/empower4.png"
-                  alt="Happy student"
-                  width={300}
-                  height={200}
-                />
-              </div>
-            </div>
-            {/* Decorative shapes */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-[#ff7b47] rounded-full translate-x-1/2 -translate-y-1/2 z-0"></div>
-            <div className="absolute bottom-0 left-0 w-16 h-16 bg-blue-200 rounded-full -translate-x-1/2 translate-y-1/2 z-0"></div>
-            <div className="absolute top-1/4 left-1/4 w-12 h-12 bg-gray-400 rounded-full -translate-x-1/2 -translate-y-1/2 z-0"></div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SECTION 6: Stats */}
-      <section className="bg-[#1b2c4c] py-12 text-white pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
-          <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl font-bold">8200+</span>
-            <p className="text-sm mt-1 text-gray-300">Success Stories</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl font-bold">500+</span>
-            <p className="text-sm mt-1 text-gray-300">Experts Tutor</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl font-bold">20+</span>
-            <p className="text-sm mt-1 text-gray-300">Year Experience</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl font-bold">8200+</span>
-            <p className="text-sm mt-1 text-gray-300">Active Student</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl font-bold">8200+</span>
-            <p className="text-sm mt-1 text-gray-300">Active Student</p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
