@@ -96,10 +96,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen font-sans overflow-x-hidden p-15">
+    <div className="min-h-screen font-sans overflow-x-hidden pt-25">
       {/* Hero Section - Empower Your Mind */}
       <section className="">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
           {/* Text Content */}
           <div
             className={`lg:w-1/2 text-center lg:text-left transform transition-all duration-1000 ${

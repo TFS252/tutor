@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-[#1b2c4c] text-white shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-[#1A3E6B] text-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl sm:text-3xl font-extrabold tracking-wide text-white">
@@ -30,7 +30,7 @@ export default function Header() {
             Find a tutor
           </Link>
           <Link
-            href="/how-it-works"
+            href="/how-it-work"
             className="hover:text-gray-300 transition-colors"
           >
             How it works?
@@ -51,10 +51,10 @@ export default function Header() {
 
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-          <button className="bg-[#ff7b47] text-white font-semibold py-2 px-5 lg:px-6 rounded-md hover:bg-[#e66c3c] transition-colors">
+          <button className="bg-white text-black hover:text-white hover:bg-[#FF6B35] font-semibold py-2 px-5 lg:px-6 rounded-md  transition-colors">
             Log In
           </button>
-          <button className="bg-white text-gray-800 font-semibold py-2 px-5 lg:px-6 rounded-md hover:bg-gray-200 transition-colors">
+          <button className=" text-white  bg-[#FF6B35] font-semibold py-2 px-5 lg:px-6 rounded-md  transition-colors">
             Sign In
           </button>
         </div>
