@@ -42,7 +42,7 @@ export default function Header() {
             Activity
           </Link>
           <Link
-            href="/become-a-tutor"
+            href="/become-tutor"
             className="hover:text-gray-300 transition-colors"
           >
             Become a tutor
