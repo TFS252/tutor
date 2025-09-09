@@ -144,8 +144,8 @@ export default function Home() {
               Teach students from over 180 countries
             </h2>
             <p className="text-gray-600 text-lg mb-6">
-              Preply tutors teach 800,000+ students globally. Join us and you'll
-              have everything you need to teach successfully.
+              Preply tutors teach 800,000+ students globally. Join us and
+              you&apos;ll have everything you need to teach successfully.
             </p>
             <ul className="text-gray-800 space-y-4 text-lg">
               {checkmarks.map((item, index) => (
@@ -175,9 +175,10 @@ export default function Home() {
               How does MyTutor work?
             </h2>
             <p className="text-gray-600 text-lg max-w-lg mx-auto md:mx-0">
-              Here's a peek at our online lesson space; it's where you'll be
-              giving life-changing tuition to school kids who need it most. And
-              it's all within reaching distance of the kettle!
+              Here&apos;s a peek at our online lesson space; it93525 16133s
+              where you93525 16133ll be giving life-changing tuition to school
+              kids who need it most. And it93525 16133s all within reaching
+              distance of the kettle!
             </p>
           </div>
           <div className="md:w-1/2 flex justify-center md:justify-end mt-12 md:mt-0">
@@ -239,8 +240,8 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Rewarding</h3>
             <p className="text-gray-600 text-sm mb-4">
-              You'll be helping shape the education of school kids who need it
-              most.
+              You&apos;ll be helping shape the education of school kids who need
+              it most.
             </p>
             <a
               href="#"
@@ -289,10 +290,11 @@ export default function Home() {
               We support you all the way
             </h2>
             <p className="text-gray-600 text-lg mb-6">
-              Online tutoring jobs needn't be stressful - we find the pupils so
-              you don't have to, give you loads of helpful training and lesson
-              resources, and we're always on-hand to answer your questions (or
-              just give you a well-deserved pat on the back)!
+              Online tutoring jobs needn&apos;t be stressful - we find the
+              pupils so you don&apos;t have to, give you loads of helpful
+              training and lesson resources, and we&apos;re always on-hand to
+              answer your questions (or just give you a well-deserved pat on the
+              back)!
             </p>
             <button className="bg-[#57d5c7] text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-teal-400 transition-colors shadow-md">
               APPLY NOW
@@ -330,7 +332,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 mb-2">
               Awesome - how do I get started?
             </h2>
-            <p className="text-gray-600 text-lg mb-6">It's super simple</p>
+            <p className="text-gray-600 text-lg mb-6">It&apos;s super simple</p>
             <ul className="text-gray-800 space-y-4 text-lg list-disc pl-5">
               <li>Create your account and fill in the application</li>
               <li>
