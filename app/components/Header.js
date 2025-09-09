@@ -45,7 +45,7 @@ export default function Header() {
             href="/become-tutor"
             className="hover:text-gray-300 transition-colors"
           >
-            Become a tutor
+            Become a tutor now
           </Link>
         </nav>
 
