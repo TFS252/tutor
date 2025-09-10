@@ -51,7 +51,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 md:gap-24">
           <div className="md:w-1/2 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-gray-900 mb-6">
               Make a living by teaching the largest community of learners
               worldwide
             </h1>
@@ -90,7 +90,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <button className="bg-[#57d5c7] text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-teal-400 transition-colors shadow-md">
+            <button className="bg-[#FF6B35] text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-amber-700 hover:text-white transition-colors shadow-md">
               Create a tutor profile now
             </button>
           </div>
@@ -154,7 +154,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <button className="mt-8 bg-[#57d5c7] text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-teal-400 transition-colors shadow-md">
+            <button className="mt-8 bg-[#FF6B35] text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-amber-700 hover:text-white transition-colors shadow-md">
               Create a tutor profile now
             </button>
           </motion.div>
@@ -175,10 +175,10 @@ export default function Home() {
               How does MyTutor work?
             </h2>
             <p className="text-gray-600 text-lg max-w-lg mx-auto md:mx-0">
-              Here&apos;s a peek at our online lesson space; it93525 16133s
-              where you93525 16133ll be giving life-changing tuition to school
-              kids who need it most. And it93525 16133s all within reaching
-              distance of the kettle!
+              Here&apos;s a peek at our online lesson space; it&apos;s where
+              you&apos;ll be giving life-changing tuition to school kids who
+              need it most. And it&apos;s all within reaching distance of the
+              kettle!
             </p>
           </div>
           <div className="md:w-1/2 flex justify-center md:justify-end mt-12 md:mt-0">
@@ -221,7 +221,7 @@ export default function Home() {
             </p>
             <a
               href="#"
-              className="text-teal-500 font-semibold text-sm hover:underline"
+              className="text-[#FF6B35] font-semibold text-sm hover:underline"
             >
               LEARN MORE
             </a>
@@ -245,7 +245,7 @@ export default function Home() {
             </p>
             <a
               href="#"
-              className="text-teal-500 font-semibold text-sm hover:underline"
+              className="text-[#FF6B35] font-semibold text-sm hover:underline"
             >
               LEARN MORE
             </a>
@@ -268,7 +268,7 @@ export default function Home() {
             </p>
             <a
               href="#"
-              className="text-teal-500 font-semibold text-sm hover:underline"
+              className="text-[#FF6B35] font-semibold text-sm hover:underline"
             >
               LEARN MORE
             </a>
@@ -296,7 +296,7 @@ export default function Home() {
               answer your questions (or just give you a well-deserved pat on the
               back)!
             </p>
-            <button className="bg-[#57d5c7] text-gray-800 font-bold px-8 py-4 rounded-xl hover:bg-teal-400 transition-colors shadow-md">
+            <button className="text-[#FF6B35]  font-bold px-8 py-4 rounded-xl hover:bg-amber-700  hover:text-white transition-colors shadow-md">
               APPLY NOW
             </button>
           </div>
