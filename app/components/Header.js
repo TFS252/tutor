@@ -83,7 +83,7 @@ export default function Header() {
           >
             {[
               { href: "/find-tutor", label: "Find a tutor" },
-              { href: "/how-it-work", label: "How it works?" },
+              { href: "/how-it-work", label: "How it work?" },
               { href: "/activity", label: "Activity" },
               { href: "/become-tutor", label: "Become a tutor" },
             ].map((item) => (
