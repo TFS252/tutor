@@ -82,7 +82,7 @@ export default function Header() {
             className="md:hidden absolute top-full left-0 w-full bg-[#1b2c4c] flex flex-col items-center py-6 space-y-6 text-lg font-medium"
           >
             {[
-              { href: "/find-a-tutor", label: "Find a tutor" },
+              { href: "/find-tutor", label: "Find a tutor" },
               { href: "/how-it-works", label: "How it works?" },
               { href: "/activity", label: "Activity" },
               { href: "/become-a-tutor", label: "Become a tutor" },
