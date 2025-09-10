@@ -83,9 +83,9 @@ export default function Header() {
           >
             {[
               { href: "/find-tutor", label: "Find a tutor" },
-              { href: "/how-it-works", label: "How it works?" },
+              { href: "/how-it-work", label: "How it works?" },
               { href: "/activity", label: "Activity" },
-              { href: "/become-a-tutor", label: "Become a tutor" },
+              { href: "/become-tutor", label: "Become a tutor" },
             ].map((item) => (
               <Link
                 key={item.href}
