@@ -381,7 +381,7 @@ export default function Home() {
                 &quot;The personalized tutoring approach transformed my learning
                 experience completely. The interactive sessions and 24/7 support
                 helped me improve my grades significantly. I highly recommend
-                this platform to anyone looking!&quot;
+                this platform to anyone looking for quality education!&quot;
               </p>
             </div>
 
