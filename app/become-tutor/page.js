@@ -163,7 +163,7 @@ export default function Home() {
 
       {/* Section 3: How does MyTutor work? */}
       <motion.section
-        className="bg-amber-50 py-16 md:py-24"
+        className=" py-16 md:py-24"
         initial="initial"
         whileInView="animate"
         variants={fadeInUp}
@@ -278,7 +278,7 @@ export default function Home() {
 
       {/* Section 5: We support you all the way */}
       <motion.section
-        className="bg-amber-50 py-16 md:py-24"
+        className=" py-16 md:py-24"
         initial="initial"
         whileInView="animate"
         variants={fadeInUp}
