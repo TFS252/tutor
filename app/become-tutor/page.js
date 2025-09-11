@@ -159,8 +159,8 @@ export default function Home() {
               Teach students from over 180 countries
             </h2>
             <p className="text-gray-600 text-lg mb-6">
-              Preply tutors teach 800,000+ students globally. Join us and you'll
-              have everything you need to teach successfully.
+              Preply tutors teach 800,000+ students globally. Join us and
+              you&lsquo;ll have everything you need to teach successfully.
             </p>
             <motion.ul
               className="text-gray-800 space-y-4 text-lg"
@@ -205,9 +205,10 @@ export default function Home() {
               How does MyTutor work?
             </h2>
             <p className="text-gray-600 text-lg max-w-lg mx-auto md:mx-0">
-              Here's a peek at our online lesson space; it's where you'll be
-              giving life-changing tuition to school kids who need it most. And
-              it's all within reaching distance of the kettle!
+              Here&lsquo; a peek at our online lesson space; it&lsquo;s where
+              you&lsquo;ll be giving life-changing tuition to school kids who
+              need it most. And it&lsquo;s all within reaching distance of the
+              kettle!
             </p>
           </motion.div>
           <motion.div
@@ -272,8 +273,8 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Rewarding</h3>
             <p className="text-gray-600 text-sm mb-4">
-              You'll be helping shape the education of school kids who need it
-              most.
+              You&lsquo;ll be helping shape the education of school kids who
+              need it most.
             </p>
             <a
               href="#"
@@ -325,10 +326,11 @@ export default function Home() {
               We support you all the way
             </h2>
             <p className="text-gray-600 text-lg mb-6">
-              Online tutoring jobs needn't be stressful - we find the pupils so
-              you don't have to, give you loads of helpful training and lesson
-              resources, and we're always on-hand to answer your questions (or
-              just give you a well-deserved pat on the back)!
+              Online tutoring jobs needn&lsquo;t be stressful - we find the
+              pupils so you don&lsquo;t have to, give you loads of helpful
+              training and lesson resources, and we&lsquo;re always on-hand to
+              answer your questions (or just give you a well-deserved pat on the
+              back)!
             </p>
             <motion.button
               className="mt-8 bg-[#FF6B35] text-white font-bold px-8 py-4 rounded-xl hover:bg-amber-700 transition-colors shadow-md"
@@ -381,7 +383,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 mb-2">
               Awesome - how do I get started?
             </h2>
-            <p className="text-gray-600 text-lg mb-6">It's super simple</p>
+            <p className="text-gray-600 text-lg mb-6">
+              It&lsquo;s super simple
+            </p>
             <motion.ul
               className="text-gray-800 space-y-4 text-lg list-disc pl-5"
               variants={staggerContainer}
