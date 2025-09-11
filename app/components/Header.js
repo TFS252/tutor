@@ -1,16 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isActivityDropdownOpen, setIsActivityDropdownOpen] = useState(false);
 
   const menuVariants = {
     hidden: { y: -30, opacity: 0, transition: { duration: 0.25 } },
     visible: { y: 0, opacity: 1, transition: { duration: 0.25 } },
+  };
+
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: -10, transition: { duration: 0.2 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   };
 
   return (
@@ -29,18 +35,69 @@ export default function Header() {
           >
             Find a tutor
           </Link>
+
           <Link
             href="/how-it-work"
             className="hover:text-gray-300 transition-colors"
           >
             How it works?
           </Link>
-          <Link
-            href="/activity"
-            className="hover:text-gray-300 transition-colors"
+
+          {/* Activity Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsActivityDropdownOpen(true)}
+            onMouseLeave={() => setIsActivityDropdownOpen(false)}
           >
-            Activity
-          </Link>
+            <button className="flex items-center hover:text-gray-300 transition-colors">
+              Activity{" "}
+              <FaChevronDown
+                className="ml-2 text-sm transition-transform duration-200"
+                style={{
+                  transform: isActivityDropdownOpen
+                    ? "rotate(180deg)"
+                    : "rotate(0deg)",
+                }}
+              />
+            </button>
+            <AnimatePresence>
+              {isActivityDropdownOpen && (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={dropdownVariants}
+                  className="absolute left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-white text-gray-800 rounded-lg shadow-lg py-2"
+                >
+                  <Link
+                    href="/activity/rbse"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    RBSE
+                  </Link>
+                  <Link
+                    href="/activity/cbse"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    CBSE
+                  </Link>
+                  <Link
+                    href="/activity/gov"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Government
+                  </Link>
+                  <Link
+                    href="/activity/international"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    International
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <Link
             href="/become-tutor"
             className="hover:text-gray-300 transition-colors"
@@ -51,10 +108,10 @@ export default function Header() {
 
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-          <button className="bg-white text-black hover:text-white hover:bg-[#FF6B35] font-semibold py-2 px-5 lg:px-6 rounded-md  transition-colors">
+          <button className="bg-white text-black hover:text-white hover:bg-[#FF6B35] font-semibold py-2 px-5 lg:px-6 rounded-md transition-colors">
             Log In
           </button>
-          <button className=" text-white  bg-[#FF6B35] font-semibold py-2 px-5 lg:px-6 rounded-md  transition-colors">
+          <button className="text-white bg-[#FF6B35] font-semibold py-2 px-5 lg:px-6 rounded-md transition-colors">
             Sign In
           </button>
         </div>
