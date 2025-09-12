@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { FaChevronDown } from "react-icons/fa";
+
 // Reusable SVG Icons Component
 const Icon = ({ name, className }) => {
   switch (name) {
@@ -17,17 +17,6 @@ const Icon = ({ name, className }) => {
           className={className}
         >
           <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3L288.1 423.4l123.4 68.2c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.2-20.9 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
-        </svg>
-      );
-    case "CheckCircle":
-      return (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          fill="currentColor"
-          className={className}
-        >
-          <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0L143 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
         </svg>
       );
     case "ArrowRight":
@@ -140,6 +129,7 @@ const faqItems = [
   },
 ];
 
+// Animation variants
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -161,76 +151,8 @@ const hoverEffect = {
   transition: { type: "spring", stiffness: 300 },
 };
 
-export default function FindTutor() {
-  const [selectedFilters, setSelectedFilters] = useState({
-    subject: "All subjects",
-    price: "All prices",
-    gender: "All genders",
-    availability: "All Availability",
-  });
-
-  const days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-
-  const timeSlots = ["Before 12pm", "12–5pm", "After 5pm"];
-  const [availability, setAvailability] = useState(
-    Array(days.length)
-      .fill(null)
-      .map(() => Array(timeSlots.length).fill(false))
-  );
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Toggle single checkbox
-  const toggleCell = (dayIndex, slotIndex) => {
-    const newAvailability = [...availability];
-    newAvailability[dayIndex][slotIndex] =
-      !newAvailability[dayIndex][slotIndex];
-    setAvailability(newAvailability);
-  };
-
-  // Toggle entire column (select all for one time slot)
-  const toggleColumn = (slotIndex) => {
-    const allSelected = availability.every((row) => row[slotIndex]);
-    const newAvailability = availability.map((row) => {
-      const newRow = [...row];
-      newRow[slotIndex] = !allSelected; // toggle all
-      return newRow;
-    });
-    setAvailability(newAvailability);
-  };
-  const [openFAQIndex, setOpenFAQIndex] = useState(null);
-
-  const filterTutors = () => {
-    return tutors.filter((tutor) => {
-      // Price filtering logic
-      if (selectedFilters.price !== "All prices") {
-        const priceRange = selectedFilters.price
-          .split("-")
-          .map((p) => parseInt(p.replace(/[^0-9]/g, "")));
-        const minPrice = priceRange[0] || 0;
-        const maxPrice = priceRange[1] || Infinity;
-        if (tutor.price < minPrice || tutor.price > maxPrice) {
-          return false;
-        }
-      }
-      // Add more filtering logic here for other criteria
-      return true;
-    });
-  };
-
-  const handleFilterChange = (event) => {
-    const { name, value } = event.target;
-    setSelectedFilters((prev) => ({ ...prev, [name]: value }));
-  };
-
+// Reusable Tutor Card Component
+const TutorCard = ({ tutor }) => {
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -248,9 +170,170 @@ export default function FindTutor() {
   };
 
   return (
-    <div className="bg-[#fdf8f5] min-h-screen pt-20 font-sans">
+    <motion.div
+      className="bg-white p-6 rounded-2xl shadow-md flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+      variants={listItem}
+      whileHover={hoverEffect}
+      whileTap={{ scale: 0.98, boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }}
+    >
+      <div className="flex-shrink-0">
+        <Image
+          src={tutor.imgSrc}
+          alt={tutor.name}
+          width={120}
+          height={120}
+          className="rounded-full object-cover w-24 h-24 sm:w-32 sm:h-32"
+        />
+      </div>
+      <div className="flex-grow text-center sm:text-left">
+        <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
+          <h3 className="text-xl font-bold text-gray-900">{tutor.name}</h3>
+          {tutor.isSuperTutor && (
+            <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">
+              Super tutor
+            </span>
+          )}
+        </div>
+        <p className="text-gray-600 text-sm mb-2">
+          {tutor.university} - {tutor.subject}
+        </p>
+        <p className="text-gray-800 text-base mb-4 line-clamp-3">{tutor.bio}</p>
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-sm text-gray-500">
+          <div className="flex items-center gap-1">
+            {renderStars(tutor.rating)}
+            <span className="font-semibold">{tutor.rating}/5</span>
+          </div>
+          <span>({tutor.reviews} reviews)</span>
+          <span className="hidden md:inline">{tutor.lessons} lessons</span>
+        </div>
+      </div>
+      <div className="flex-shrink-0 flex flex-col items-center sm:items-end text-center sm:text-right mt-4 sm:mt-0">
+        <span className="text-xl font-bold text-gray-900 mb-2">
+          {tutor.priceRange}
+        </span>
+        <button className="bg-amber-500 text-white font-bold px-6 py-3 rounded-full hover:bg-amber-600 transition-colors">
+          View profile
+        </button>
+      </div>
+    </motion.div>
+  );
+};
+
+// Reusable FAQ Item Component
+const FaqItem = ({ item, index, openFAQIndex, setOpenFAQIndex }) => (
+  <motion.div
+    variants={listItem}
+    className="border-b border-gray-300 pb-4"
+    whileTap={{ scale: 0.99 }} // Added for mobile press effect
+  >
+    <div
+      className="flex justify-between items-center cursor-pointer py-2"
+      onClick={() => setOpenFAQIndex(openFAQIndex === index ? null : index)}
+      role="button"
+      tabIndex={0}
+      aria-expanded={openFAQIndex === index}
+      aria-controls={`faq-answer-${index}`}
+    >
+      <h4
+        className={`text-lg md:text-xl transition ${
+          openFAQIndex === index ? "font-bold" : "font-semibold text-gray-900"
+        }`}
+      >
+        {item.question}
+      </h4>
+      <Icon
+        name="ChevronDown"
+        className={`h-5 w-5 transform transition-transform duration-300 ${
+          openFAQIndex === index ? "rotate-180" : "text-gray-500"
+        }`}
+      />
+    </div>
+    <AnimatePresence>
+      {openFAQIndex === index && (
+        <motion.p
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="mt-2 text-gray-600 text-base leading-relaxed overflow-hidden"
+          id={`faq-answer-${index}`}
+        >
+          {item.answer}
+        </motion.p>
+      )}
+    </AnimatePresence>
+  </motion.div>
+);
+
+export default function FindTutor() {
+  const [selectedFilters, setSelectedFilters] = useState({
+    subject: "All subjects",
+    price: "All prices",
+    gender: "All genders",
+    availability: "All Availability",
+  });
+
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  const timeSlots = ["Before 12pm", "12–5pm", "After 5pm"];
+  const [availability, setAvailability] = useState(
+    Array(days.length)
+      .fill(null)
+      .map(() => Array(timeSlots.length).fill(false))
+  );
+  const [isOpen, setIsOpen] = useState(false);
+  const [openFAQIndex, setOpenFAQIndex] = useState(null);
+
+  const toggleCell = (dayIndex, slotIndex) => {
+    const newAvailability = [...availability];
+    newAvailability[dayIndex][slotIndex] =
+      !newAvailability[dayIndex][slotIndex];
+    setAvailability(newAvailability);
+  };
+
+  const toggleColumn = (slotIndex) => {
+    const allSelected = availability.every((row) => row[slotIndex]);
+    const newAvailability = availability.map((row) => {
+      const newRow = [...row];
+      newRow[slotIndex] = !allSelected;
+      return newRow;
+    });
+    setAvailability(newAvailability);
+  };
+
+  const filterTutors = () => {
+    return tutors.filter((tutor) => {
+      // Price filtering logic
+      if (selectedFilters.price !== "All prices") {
+        const priceRange = selectedFilters.price
+          .split("-")
+          .map((p) => parseInt(p.replace(/[^0-9]/g, "")));
+        const minPrice = priceRange[0] || 0;
+        const maxPrice = priceRange[1] || Infinity;
+        if (tutor.price < minPrice || tutor.price > maxPrice) {
+          return false;
+        }
+      }
+      return true;
+    });
+  };
+
+  const handleFilterChange = (event) => {
+    const { name, value } = event.target;
+    setSelectedFilters((prev) => ({ ...prev, [name]: value }));
+  };
+
+  return (
+    <div className="bg-[#fdf8f5] min-h-screen pt-15 font-sans">
       {/* SECTION 1: Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#f8d0a5] to-[#fde5cc] py-20 md:py-32">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             className="relative z-10"
@@ -279,30 +362,22 @@ export default function FindTutor() {
                 transition: { type: "spring", stiffness: 300 },
               }}
               whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: [
-                  "0 10px 20px rgba(26, 62, 107, 0.2)",
-                  "0 15px 30px rgba(255, 107, 53, 0.3)",
-                  "0 10px 20px rgba(26, 62, 107, 0.2)",
-                ],
-              }}
-              transition={{ boxShadow: { duration: 2, repeat: Infinity } }}
             >
               <span className="relative z-20 drop-shadow-lg">
                 Get Started for Free
               </span>
-
-              {/* Shimmer */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 -skew-x-12"
                 initial={{ x: "-100%" }}
-                whileHover={{
-                  x: "200%",
-                  transition: { duration: 1.5, repeat: Infinity },
+                animate={{
+                  x: ["-100%", "200%"],
+                  transition: {
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "linear",
+                  },
                 }}
               />
-
-              {/* Glow */}
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-[#1A3E6B] to-[#FF6B35] rounded-full blur-lg opacity-30 group-hover:opacity-75 -z-10"
                 animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.05, 1] }}
@@ -315,15 +390,7 @@ export default function FindTutor() {
             variants={listItem}
             initial="hidden"
             animate="visible"
-          >
-            <Image
-              src="/images/WhatsApp Image 2025-09-05 at 15.17.35_7f43c9a4.jpg"
-              alt="Online tutoring session"
-              width={700}
-              height={500}
-              className="rounded-2xl shadow-2xl"
-            />
-          </motion.div>
+          ></motion.div>
         </div>
       </section>
 
@@ -338,8 +405,11 @@ export default function FindTutor() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div>
-              <label className="block text-lg font-bold mb-3">Subject</label>
+              <label htmlFor="subject" className="block text-lg font-bold mb-3">
+                Subject
+              </label>
               <select
+                id="subject"
                 name="subject"
                 value={selectedFilters.subject}
                 onChange={handleFilterChange}
@@ -353,8 +423,11 @@ export default function FindTutor() {
               </select>
             </div>
             <div>
-              <label className="block text-lg font-bold mb-3">Price</label>
+              <label htmlFor="price" className="block text-lg font-bold mb-3">
+                Price
+              </label>
               <select
+                id="price"
                 name="price"
                 value={selectedFilters.price}
                 onChange={handleFilterChange}
@@ -367,8 +440,11 @@ export default function FindTutor() {
               </select>
             </div>
             <div>
-              <label className="block text-lg font-bold mb-3">Gender</label>
+              <label htmlFor="gender" className="block text-lg font-bold mb-3">
+                Gender
+              </label>
               <select
+                id="gender"
                 name="gender"
                 value={selectedFilters.gender}
                 onChange={handleFilterChange}
@@ -380,11 +456,7 @@ export default function FindTutor() {
               </select>
             </div>
             <div className="relative">
-              {/* Dropdown Button */}
-              <label
-                className="block text-lg
-               font-bold mb-3"
-              >
+              <label className="block text-lg font-bold mb-3">
                 Availability
               </label>
               <button
@@ -398,8 +470,6 @@ export default function FindTutor() {
                   }`}
                 />
               </button>
-
-              {/* Dropdown Content */}
               {isOpen && (
                 <div className="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg p-4">
                   <table className="w-full text-sm">
@@ -417,7 +487,6 @@ export default function FindTutor() {
                       </tr>
                     </thead>
                     <tbody>
-                      {/* Select all row */}
                       <tr>
                         <td className="font-medium text-gray-700">
                           Select all
@@ -435,8 +504,6 @@ export default function FindTutor() {
                           </td>
                         ))}
                       </tr>
-
-                      {/* Days rows */}
                       {days.map((day, dayIndex) => (
                         <tr key={day}>
                           <td className="py-2 font-medium text-gray-600">
@@ -471,58 +538,7 @@ export default function FindTutor() {
             viewport={{ once: true, amount: 0.2 }}
           >
             {filterTutors().map((tutor, index) => (
-              <motion.div
-                key={index}
-                className="bg-white p-6 rounded-2xl shadow-md flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                variants={listItem}
-                whileHover={hoverEffect}
-              >
-                <div className="flex-shrink-0">
-                  <Image
-                    src={tutor.imgSrc}
-                    alt={tutor.name}
-                    width={120}
-                    height={120}
-                    className="rounded-full object-cover w-24 h-24 sm:w-32 sm:h-32"
-                  />
-                </div>
-                <div className="flex-grow text-center sm:text-left">
-                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {tutor.name}
-                    </h3>
-                    {tutor.isSuperTutor && (
-                      <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">
-                        Super tutor
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-gray-600 text-sm mb-2">
-                    {tutor.university} - {tutor.subject}
-                  </p>
-                  <p className="text-gray-800 text-base mb-4 line-clamp-3">
-                    {tutor.bio}
-                  </p>
-                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-sm text-gray-500">
-                    <div className="flex items-center gap-1">
-                      {renderStars(tutor.rating)}
-                      <span className="font-semibold">{tutor.rating}/5</span>
-                    </div>
-                    <span>({tutor.reviews} reviews)</span>
-                    <span className="hidden md:inline">
-                      {tutor.lessons} lessons
-                    </span>
-                  </div>
-                </div>
-                <div className="flex-shrink-0 flex flex-col items-center sm:items-end text-center sm:text-right mt-4 sm:mt-0">
-                  <span className="text-xl font-bold text-gray-900 mb-2">
-                    {tutor.priceRange}
-                  </span>
-                  <button className="bg-amber-500 text-white font-bold px-6 py-3 rounded-full hover:bg-amber-600 transition-colors">
-                    View profile
-                  </button>
-                </div>
-              </motion.div>
+              <TutorCard key={index} tutor={tutor} />
             ))}
           </motion.div>
 
@@ -533,21 +549,13 @@ export default function FindTutor() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <div className="mb-4">
-              <Image
-                src="/images/WhatsApp Image 2025-09-05 at 15.16.21_41b0c8e5.jpg"
-                alt="Looking for something specific?"
-                width={150}
-                height={150}
-                className="rounded-full"
-              />
-            </div>
+            <div className="mb-4"></div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               Need Help Finding the Right Tutor?
             </h3>
             <p className="text-gray-700 text-base mb-6">
-              Tell us what you&apos;re looking for, and we&apos;ll help you find
-              the perfect tutor to match your needs.
+              Tell us what you're looking for, and we'll help you find the
+              perfect tutor to match your needs.
             </p>
             <button className="bg-gray-800 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-gray-900 transition-colors">
               Tell Us More
@@ -555,6 +563,7 @@ export default function FindTutor() {
           </motion.div>
         </div>
 
+        {/* --- */}
         <section className="py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
@@ -579,46 +588,17 @@ export default function FindTutor() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {faqItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="border-b border-gray-300 pb-4"
-                  variants={listItem}
-                >
-                  <div
-                    className="flex justify-between items-center cursor-pointer py-2"
-                    onClick={() =>
-                      setOpenFAQIndex(openFAQIndex === index ? null : index)
-                    }
-                  >
-                    <h4
-                      className={`text-lg md:text-xl transition ${
-                        openFAQIndex === index
-                          ? "font-bold "
-                          : "font-semibold text-gray-900"
-                      }`}
-                    >
-                      {item.question}
-                    </h4>
-                    <Icon
-                      name="ChevronDown"
-                      className={`h-5 w-5 transform transition-transform duration-300 ${
-                        openFAQIndex === index ? "rotate-180 " : "text-gray-500"
-                      }`}
-                    />
-                  </div>
-                  {openFAQIndex === index && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-2 text-gray-600 text-base leading-relaxed"
-                    >
-                      {item.answer}
-                    </motion.p>
-                  )}
-                </motion.div>
-              ))}
+              <AnimatePresence>
+                {faqItems.map((item, index) => (
+                  <FaqItem
+                    key={index}
+                    item={item}
+                    index={index}
+                    openFAQIndex={openFAQIndex}
+                    setOpenFAQIndex={setOpenFAQIndex}
+                  />
+                ))}
+              </AnimatePresence>
             </motion.div>
           </div>
         </section>

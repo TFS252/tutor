@@ -42,7 +42,7 @@ export default function HowItWorksPage() {
   };
 
   return (
-    <div className="bg-[#fdf8f5] pt-20 text-gray-900 font-sans">
+    <div className="bg-[#fdf8f5] pt-15 text-gray-900 font-sans">
       {/* Hero Section */}
       <section ref={addToRefs} className="py-16 px-6 fade-on-scroll-target">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">

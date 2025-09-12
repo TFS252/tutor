@@ -96,7 +96,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen font-sans overflow-x-hidden pt-20">
+    <div className="min-h-screen font-sans overflow-x-hidden pt-20 p-10">
       {/* Hero Section - Empower Your Mind */}
       <section className="">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">

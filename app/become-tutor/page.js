@@ -45,7 +45,7 @@ export default function Home() {
   };
 
   return (
-    <main className="pt-20 min-h-screen overflow-x-hidden">
+    <main className="pt-10 min-h-screen overflow-x-hidden">
       {/* Section 1: Hero - Make a living */}
       <motion.section
         className="bg-white py-16 md:py-24"
@@ -59,7 +59,7 @@ export default function Home() {
             className="md:w-1/2 text-center md:text-left"
             variants={fadeInFromLeft}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-3xl lg:text-4xl font-extrabold leading-tight text-gray-900 mb-6">
               Make a living by teaching the largest community of learners
               worldwide
             </h1>
@@ -107,7 +107,7 @@ export default function Home() {
             </motion.button>
           </motion.div>
           <motion.div
-            className="md:w-1/2 flex justify-center md:justify-end mt-12 md:mt-0"
+            className="md:w-1/2 flex justify-center md:justify-end "
             variants={fadeInFromRight}
           >
             <Image
