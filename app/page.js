@@ -280,16 +280,20 @@ export default function Home() {
           </div>
 
           {/* Search Bar */}
+          {/* Search Bar */}
           <div
             className="mt-8 flex justify-center animate-fade-in-up"
             style={{ animationDelay: "300ms" }}
           >
-            <div className="flex flex-col sm:flex-row items-stretch w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden border hover:shadow-2xl transition-shadow duration-300">
+            <div className="flex flex-col sm:flex-row w-full max-w-2xl bg-white rounded-2xl shadow-xl border overflow-hidden hover:shadow-2xl transition-shadow duration-300">
               {/* Input */}
               <input
                 type="text"
                 placeholder="What subject would you like to learn?"
-                className="flex-1 px-4 sm:px-6 py-3 sm:py-4 outline-none text-base sm:text-lg text-gray-700 placeholder-gray-400 w-full"
+                className="flex-1 px-4 sm:px-6 py-3 sm:py-4 
+                 outline-none text-base sm:text-lg 
+                 text-gray-700 placeholder-gray-400 
+                 w-full"
               />
 
               {/* Button */}
@@ -298,7 +302,8 @@ export default function Home() {
                  px-6 sm:px-8 py-3 sm:py-4 
                  hover:from-[#2a3f5f] hover:to-[#1b2c4c] 
                  transition-all duration-300 transform hover:scale-105 
-                 rounded-b-2xl sm:rounded-b-none sm:rounded-r-2xl w-full sm:w-auto"
+                 rounded-b-2xl sm:rounded-b-none sm:rounded-r-2xl 
+                 w-full sm:w-auto"
               >
                 <FaSearch className="text-lg sm:text-xl mx-auto" />
               </button>
