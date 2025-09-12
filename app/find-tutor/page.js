@@ -555,7 +555,7 @@ export default function FindTutor() {
             </h3>
             <p className="text-gray-700 text-base mb-6">
               Tell us what you&apos;re looking for, and we&apos;ll help you find
-              the perfect tutor to match your needs.
+              the.
             </p>
             <button className="bg-gray-800 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-gray-900 transition-colors">
               Tell Us More
