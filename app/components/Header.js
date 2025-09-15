@@ -73,25 +73,13 @@ export default function Header() {
                     href="/activity/rbse"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    RBSE
+                    Education
                   </Link>
                   <Link
                     href="/activity/cbse"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    CBSE
-                  </Link>
-                  <Link
-                    href="/activity/gov"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Government
-                  </Link>
-                  <Link
-                    href="/activity/international"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    International
+                    Entertainment
                   </Link>
                 </motion.div>
               )}

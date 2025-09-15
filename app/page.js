@@ -278,37 +278,7 @@ export default function Home() {
               Find Online Tutor In Any Subject
             </h2>
           </div>
-
           {/* Search Bar */}
-          {/* Search Bar */}
-          <div
-            className="mt-8 flex justify-center animate-fade-in-up"
-            style={{ animationDelay: "300ms" }}
-          >
-            <div className="flex flex-col sm:flex-row w-full max-w-2xl bg-white rounded-2xl shadow-xl border overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-              {/* Input */}
-              <input
-                type="text"
-                placeholder="What subject would you like to learn?"
-                className="flex-1 px-4 sm:px-6 py-3 sm:py-4 
-                 outline-none text-base sm:text-lg 
-                 text-gray-700 placeholder-gray-400 
-                 w-full"
-              />
-
-              {/* Button */}
-              <button
-                className="bg-gradient-to-r from-[#1b2c4c] to-[#2a3f5f] text-white 
-                 px-6 sm:px-8 py-3 sm:py-4 
-                 hover:from-[#2a3f5f] hover:to-[#1b2c4c] 
-                 transition-all duration-300 transform hover:scale-105 
-                 rounded-b-2xl sm:rounded-b-none sm:rounded-r-2xl 
-                 w-full sm:w-auto"
-              >
-                <FaSearch className="text-lg sm:text-xl mx-auto" />
-              </button>
-            </div>
-          </div>
 
           {/* Subjects Grid */}
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
@@ -392,10 +362,10 @@ export default function Home() {
               style={{ animationDelay: "600ms" }}
             >
               <p className="text-center text-gray-700 text-base sm:text-lg leading-relaxed">
-                &quot;The personalized tutoring approach transformed my learning
+                "The personalized tutoring approach transformed my learning
                 experience completely. The interactive sessions and 24/7 support
                 helped me improve my grades significantly. I highly recommend
-                this platform to anyone looking for quality education!&quot;
+                this platform to anyone looking for quality education!"
               </p>
             </div>
 

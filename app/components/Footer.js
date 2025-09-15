@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col items-start">
           <div className="flex items-center mb-4">
             <Image
-              src="/logo-white.png"
+              src="/review1.png"
               alt="TutorSite Logo"
               width={40}
               height={40}

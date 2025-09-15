@@ -333,7 +333,7 @@ export default function FindTutor() {
   return (
     <div className="bg-[#fdf8f5] min-h-screen pt-15 font-sans">
       {/* SECTION 1: Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#f8d0a5] to-[#fde5cc] py-20 md:py-32">
+      <section className="relative overflow-hidden from-[#f8d0a5] to-[#fde5cc] py-20 md:py-32">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             className="relative z-10"
